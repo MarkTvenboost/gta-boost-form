@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОКАЧКА GTA ONLINE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group.required label:after {
+            content: " *";
+            color: red;
+        }
+        .form-note {
+            font-size: 12px;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-option input {
+            margin-right: 8px;
+        }
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .payment-details {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .payment-details p {
+            margin: 5px 0;
+        }
+        .emoji-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .file-upload {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ПРОКАЧКА GTA ONLINE</h1>
+        
+        <form id="orderForm">
+            <div class="form-group">
+                <label>В каком лаунчере куплена игра?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="steam" name="launcher" value="Steam" required>
+                        <label for="steam">Steam</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="socialclub" name="launcher" value="SocialClub">
+                        <label for="socialclub">SocialClub</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="epicgames" name="launcher" value="EpicGames">
+                        <label for="epicgames">EpicGames</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Версия игры</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="enhanced" name="version" value="Enhanced" required>
+                        <label for="enhanced">Enhanced</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="legacy" name="version" value="Legacy">
+                        <label for="legacy">Legacy</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="login">Логин</label>
+                <p class="form-note">Steam — логин | Epic — почта | Rockstar — почта от SocialClub</p>
+                <input type="text" id="login" name="login" required>
+            </div>
+            
+            <div class="form-group required">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <div class="emoji-title">💰 Количество игровой валюты</div>
+                <select id="money" name="money" class="form-control">
+                    <option value="30 млн">30 млн</option>
+                    <option value="40 млн">40 млн</option>
+                    <option value="50 млн">50 млн</option>
+                    <option value="60 млн">60 млн</option>
+                    <option value="70 млн">70 млн</option>
+                    <option value="80 млн">80 млн</option>
+                    <option value="90 млн">90 млн</option>
+                    <option value="100 млн">100 млн</option>
+                    <option value="110 млн">110 млн</option>
+                    <option value="120 млн">120 млн</option>
+                    <option value="130 млн">130 млн</option>
+                    <option value="140 млн">140 млн</option>
+                    <option value="150 млн">150 млн</option>
+                    <option value="160 млн">160 млн</option>
+                    <option value="170 млн">170 млн</option>
+                    <option value="180 млн">180 млн</option>
+                    <option value="190 млн">190 млн</option>
+                    <option value="250 млн">250 млн</option>
+                    <option value="500 млн">500 млн</option>
+                    <option value="750 млн">750 млн</option>
+                    <option value="1 млрд">1 млрд</option>
+                    <option value="2 млрд">2 млрд</option>
+                    <option value="3 млрд">3 млрд</option>
+                    <option value="4 млрд">4 млрд</option>
+                </select>
+            </div>
+            
+            <div class="form-group required">
+                <label for="level">Какой уровень персонажа сделать?</label>
+                <p class="form-note">От 1 до 8000</p>
+                <input type="number" id="level" name="level" min="1" max="8000" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Отдельные уровни</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="gangLevel" name="gangLevel" value="8000">
+                        <label for="gangLevel">8000 уровень банды</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="arenaLevel" name="arenaLevel" value="1000">
+                        <label for="arenaLevel">1000 уровень арены</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="clubLevel" name="clubLevel" value="1000">
+                        <label for="clubLevel">1000 уровень автоклуба</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="emoji-title">🔓 Основные разблокировки</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="skills" name="skills" value="Открыть все скиллы">
+                        <label for="skills">Открыть все скиллы</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="lsc" name="lsc" value="Открыть LSC тюнинг">
+                        <label for="lsc">Открыть LSC тюнинг</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="weapons" name="weapons" value="Открыть оружие">
+                        <label for="weapons">Открыть оружие</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="masks" name="masks" value="Открыть маски">
+                        <label for="masks">Открыть маски</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="clothes" name="clothes" value="Открыть одежду">
+                        <label for="clothes">Открыть одежду</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="parachutes" name="parachutes" value="Открыть парашюты">
+                        <label for="parachutes">Открыть парашюты</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="tattoos" name="tattoos" value="Открыть татуировки">
+                        <label for="tattoos">Открыть татуировки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="achievements" name="achievements" value="Открыть все достижения">
+                        <label for="achievements">Открыть все достижения</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="contacts" name="contacts" value="Открыть контакты в телефоне">
+                        <label for="contacts">Открыть контакты в телефоне</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="emoji-title">🔓 Дополнительно</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="bunker" name="bunker" value="Открыть разработки бункера">
+                        <label for="bunker">Открыть разработки бункера</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="bunkerRewards" name="bunkerRewards" value="Открыть награды тира в бункере">
+                        <label for="bunkerRewards">Открыть награды тира в бункере</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="untrustworthy" name="untrustworthy" value="Удалить статус «ненадёжный»">
+                        <label for="untrustworthy">Удалить статус «ненадёжный»</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="kosatka" name="kosatka" value="Открыть косатку для покупки">
+                        <label for="kosatka">Открыть косатку для покупки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="gender" name="gender" value="Сменить пол персонажа">
+                        <label for="gender">Сменить пол персонажа</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group required">
+                <label for="contact">Контакты для связи</label>
+                <p class="form-note">Укажите ссылку на ваш VK или Telegram</p>
+                <input type="url" id="contact" name="contact" required>
+            </div>
+            
+            <div class="form-group required">
+                <label>Скриншот оплаты</label>
+                <div class="file-upload">
+                    <input type="file" id="paymentProof" name="paymentProof" required>
+                </div>
+            </div>
+            
+            <div class="payment-details">
+                <p><strong>Реквизиты для перевода:</strong></p>
+                <p>💚 Сбербанк — 2202 2032 9079 4421</p>
+                <p>❤️ Альфа-Банк — 2200 1509 9435 5391</p>
+                <p>💛 Т-Банк — 2200 7001 1816 8359</p>
+                <p>Донат — donatty.com/marktvenboost</p>
+                <p>ЮMoney — yoomoney.ru/to/410014747956154</p>
+            </div>
+            
+            <button type="submit" class="submit-btn">Оформить заказ</button>
+        </form>
+        
+        <div class="footer">
+            <p>Заказ сразу будет добавлен в очередь</p>
+            <p>Если у вас появятся дополнительные вопросы, напишите мне: <a href="https://vk.com/markboostgta" target="_blank">https://vk.com/markboostgta</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Собираем данные формы
+            const formData = new FormData(this);
+            const orderData = {};
+            formData.forEach((value, key) => {
+                orderData[key] = value;
+            });
+            
+            // Создаем карточку в Trello
+            createTrelloCard(orderData);
+            
+            alert('Заявка успешно отправлена!');
+            this.reset();
+        });
+        
+        function createTrelloCard(orderData) {
+            // Здесь реализуйте интеграцию с Trello API
+            // Примерный код (вам нужно получить API ключ и токен):
+            /*
+            const trelloKey = 'YOUR_API_KEY';
+            const trelloToken = 'YOUR_API_TOKEN';
+            const listId = 'YOUR_LIST_ID';
+            
+            let cardName = `Заказ GTA от ${new Date().toLocaleString()}`;
+            let cardDesc = `Лаунчер: ${orderData.launcher}\n`;
+            cardDesc += `Версия: ${orderData.version}\n`;
+            cardDesc += `Логин: ${orderData.login}\n`;
+            cardDesc += `Пароль: ${orderData.password}\n`;
+            cardDesc += `Деньги: ${orderData.money}\n`;
+            cardDesc += `Уровень: ${orderData.level}\n`;
+            // Добавьте остальные поля...
+            
+            fetch(`https://api.trello.com/1/cards?key=${trelloKey}&token=${trelloToken}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: cardName,
+                    desc: cardDesc,
+                    idList: listId,
+                    // Дополнительные параметры...
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+            */
+            
+            console.log('Данные для Trello:', orderData);
+            // В реальном коде замените console.log на вызов Trello API
+        }
+    </script>
+</body>
+</html>
